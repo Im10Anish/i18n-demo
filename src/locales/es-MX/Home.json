@@ -1,0 +1,8 @@
+{
+  "title": "i18n Demo App",
+  "welcome": {
+    "heading": "Bienvenido a la Demo App de i18n",
+    "description": "Esta es una sencilla aplicación para demostrar la internacionalización (i18n) usando React e i18next."
+  },
+  "footer": "2025 Next.js i18n Demo. Todos los derechos reservados."
+}

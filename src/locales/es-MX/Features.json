@@ -1,0 +1,10 @@
+{
+  "heading": "Características principales",
+  "list": [
+    "Selección de idioma sin cambios de URL",
+    "Transiciones de texto suaves al cambiar de idioma",
+    "Organización de la traducción basada en componentes",
+    "Los desarrolladores sólo tienen que gestionar los contenidos en inglés",
+    "Arquitectura escalable lista para la producción"
+  ]
+}

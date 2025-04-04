@@ -1,10 +1,10 @@
 {
-  "heading": "Fonctionnalités Clés",
+  "heading": "Caractéristiques principales",
   "list": [
-    "Sélection de langue sans changement d'URL",
+    "Sélection de la langue sans modification de l'URL",
     "Transitions fluides du texte lors du changement de langue",
-    "Organisation des traductions par composant",
-    "Les développeurs n'ont besoin de gérer que le contenu en anglais",
+    "Organisation de la traduction basée sur des composants",
+    "Les développeurs n'ont qu'à gérer le contenu en anglais",
     "Architecture évolutive prête pour la production"
   ]
 }
