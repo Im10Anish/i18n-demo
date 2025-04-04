@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js i18n Demo Application
+
+A production-grade Next.js application demonstrating internationalization (i18n) with component-based translations, DeepL integration, and smooth language transitions.
+
+## Features
+
+- **Component-based translation organization** - Each UI component has its own translation files
+- **URL remains unchanged during language switching** - Language preferences stored in cookies
+- **Smooth text transitions** - Animated text changes using Framer Motion
+- **Automated translation** - Integration with DeepL API for professional-quality translations
+- **Developer-friendly workflow** - Only English content needs to be managed, other languages are auto-translated
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 16.x or later
+- npm or yarn
+- DeepL API key (free tier available) - [Get a key here](https://www.deepl.com/pro-api)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/nextjs-i18n-demo.git
+   cd nextjs-i18n-demo
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Create a `.env.local` file in the root directory with your DeepL API key:
+
+   ```
+   DEEPL_API_KEY=your-deepl-api-key
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Project Structure
+
+```
+/app                    # Next.js app directory
+  /components           # React components
+  /hooks                # Custom React hooks
+  /i18n                 # i18n configuration
+  /utils                # Utility functions
+/locales                # Translation files
+  /en-US                # English translations
+    /HomePage.json      # Component-specific translations
+    /Features.json
+    /LanguageSelector.json
+  /es-MX                # Spanish translations
+  /fr-FR                # French translations
+/scripts                # Utility scripts
+  /translate.ts         # Translation script
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Translation Workflow
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Define new content in English in the appropriate component translation file (e.g., `/locales/en-US/HomePage.json`)
+2. Run the translation script to generate translations for all other languages:
+   ```bash
+   npm run translate
+   # or
+   yarn translate
+   ```
+3. Review and adjust generated translations if needed
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Extending the Application
 
-## Learn More
+### Adding a New Component with Translations
 
-To learn more about Next.js, take a look at the following resources:
+1. Create your component in `/app/components/`
+2. Create a translation file in `/locales/en-US/YourComponent.json`
+3. Use the `useComponentTranslation` hook to access translations:
+   ```tsx
+   const { translations } = useComponentTranslation("YourComponent");
+   ```
+4. Run the translation script to generate translations for other languages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Adding a New Language
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Add the new locale code to the `i18n.locales` array in `/app/i18n/settings.ts`
+2. Run the translation script to generate translations for the new language
