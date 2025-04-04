@@ -1,0 +1,10 @@
+{
+  "heading": "Fonctionnalités Clés",
+  "list": [
+    "Sélection de langue sans changement d'URL",
+    "Transitions fluides du texte lors du changement de langue",
+    "Organisation des traductions par composant",
+    "Les développeurs n'ont besoin de gérer que le contenu en anglais",
+    "Architecture évolutive prête pour la production"
+  ]
+}

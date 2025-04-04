@@ -1,0 +1,10 @@
+{
+  "heading": "Key Features",
+  "list": [
+    "Language selection without URL changes",
+    "Smooth text transitions when changing languages",
+    "Component-based translation organization",
+    "Developers only need to manage English content",
+    "Scalable architecture ready for production"
+  ]
+}

@@ -9,7 +9,11 @@ export default async function Home() {
   const localeCookie = cookieStore.get("NEXT_LOCALE");
   const locale: Locale = (localeCookie?.value as Locale) || i18n.defaultLocale;
 
-  const translations = await getPageTranslations(locale, ["home"]);
+  const translations = await getPageTranslations(locale, [
+    "home",
+    "features",
+    "languageSelector",
+  ]);
 
-  return <HomePage locale={locale} translations={translations} />;
+  return <HomePage translations={translations} />;
 }

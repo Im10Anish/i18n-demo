@@ -1,30 +1,25 @@
 "use client";
-import React, { useEffect } from "react";
-import { useLocale } from "@/app/hooks/useLocale";
+import React from "react";
 import { AnimatedText } from "../AnimatedText";
+import Features from "../Features";
+import LanguageSelector from "../LanguageSelector";
 
 type HomePageProps = {
-  locale: string;
   translations: Record<string, any>;
 };
 
-const Home = ({ locale: initialLocale, translations }: HomePageProps) => {
-  const { setLocale } = useLocale();
+const Home = ({ translations }: HomePageProps) => {
   const { home } = translations; // Destructure the translations for the home component
-
-  // Set the locale to the initial locale from the server
-  useEffect(() => {
-    setLocale(initialLocale);
-  }, [initialLocale, setLocale]);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-6 bg-gray-50">
-      <div className="w-full max-w-2xl mx-auto">
+      <div className="w-full max-w-3xl mx-auto">
         <div className="p-8 bg-white rounded-xl shadow-md">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold text-gray-800">
               <AnimatedText text={home.title} />
             </h1>
+            <LanguageSelector translations={translations} />
           </div>
 
           <section className="mb-6">
@@ -35,9 +30,10 @@ const Home = ({ locale: initialLocale, translations }: HomePageProps) => {
               <AnimatedText text={home.welcome?.description} />
             </p>
           </section>
+          <Features translations={translations} />
 
           <div className="text-sm text-gray-500 border-t pt-4 mt-6">
-            <AnimatedText text={home.footer || "© 2025 Next.js i18n Demo"} />
+            <AnimatedText text={home.footer} />
           </div>
         </div>
       </div>

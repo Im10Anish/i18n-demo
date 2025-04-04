@@ -1,0 +1,8 @@
+{
+  "title": "Application de démonstration i18n",
+  "welcome": {
+    "heading": "Bienvenue sur l'application de démonstration i18n",
+    "description": "Il s'agit d'une application simple pour démontrer l'internationalisation (i18n) en utilisant React et i18next."
+  },
+  "footer": "© 2025 Démo i18n Next.js. Tous droits réservés."
+}
