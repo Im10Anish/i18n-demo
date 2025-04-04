@@ -95,5 +95,5 @@ A production-grade Next.js application demonstrating internationalization (i18n)
 
 ### Adding a New Language
 
-1. Add the new locale code to the `i18n.locales` array in `/app/i18n/settings.ts`
+1. Add the new locale code to the `i18n.locales` array in `/app/i18n/settings.ts` . Supported Locale supported by DeepL listed [here](https://developers.deepl.com/docs/resources/supported-languages)
 2. Run the translation script to generate translations for the new language
